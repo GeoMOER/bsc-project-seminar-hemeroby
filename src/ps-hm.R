@@ -1,8 +1,8 @@
 library(raster)
 library(sp)
-library(rgdal)
+library(rgdal)4
 
-setwd("C:/Users/tnauss/Desktop/vector")
+setwd("D:/active/moc/ps-hemeroby/examples/data/procd")
 test <- readOGR("test.shp", "test")
 
 vector <- readOGR("ps-hm-ws_all_polygons_utm_32n.shp", "ps-hm-ws_all_polygons_utm_32n")
@@ -31,7 +31,7 @@ vector_neu@data$RED <- 1
 vector_neu@data$GREEN <- 1
 vector_neu@data$BLUE <- 1
 vector_neu@data$Count <- as.integer(1)
-  
+
 # vector_neu@data$Id <- NULL
 # vector_neu@data$LU <- NULL
 # vector_neu@data$HEM <- NULL
@@ -42,4 +42,3 @@ vector_neu@data$Count <- as.integer(1)
 
 writeOGR(vector_neu, "ps-hm-ws_all_polygons_utm_32n_etrs89.shp", 
          "ps-hm-ws_all_polygons_utm_32n_etrs89", driver = "ESRI Shapefile")
-
